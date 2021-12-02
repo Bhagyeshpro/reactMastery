@@ -1,12 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 
-function ItemDescription({ title, discription }) {
-  return (
-    <div>
-      <h1>{title}</h1>
-      <h2>{discription}</h2>
-    </div>
-  );
+export default class ItemDescription extends Component {
+  render() {
+    const { title, discription } = this.props;
+    return (
+      <div>
+        <h1>{title}</h1>
+        <h2>
+          <i>{discription}</i>
+        </h2>
+      </div>
+    );
+  }
 }
-
-export default ItemDescription;

@@ -11,10 +11,34 @@ function App() {
     console.log("I re-rendered");
   });
 
+  // componentWillUnmount alternative
+  // Lifecycle func - when component unmounts/cleanup function
+  useEffect(() => {
+    console.log("Attached listener");
+    window.addEventListener("resize", updateWindowWidth);
+    return () => {
+      console.log("Detached listener");
+      window.removeEventListener("resize", updateWindowWidth);
+    };
+  });
+
+  const updateWindowWidth = () => {
+    setWindowWidth(window.innerWidth);
+  };
+
   //On First Render/Mount - componentDidMount
   useEffect(() => {
     console.log("Component Is Mounted");
   }, []);
+
+  //On First Render + whenever the component changes
+  //componentDidUpdate alternative
+  useEffect(() => {
+    console.log(`The name changed! ${name}`);
+    return () => {
+      console.log("Component Unmounted!");
+    };
+  }, [name]);
 
   return (
     <div className="App">

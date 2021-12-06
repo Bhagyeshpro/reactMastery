@@ -22,7 +22,7 @@ export default class AppClass extends Component {
   //   });
   // };
 
-  // Async the state using previousState so when we call our state at different time in our code it will work fine
+  // Async the state using previousState so when we call our state at different time in our code it will work fi
   increment = () => {
     this.setState((previousState) => ({
       count: previousState.count + 1,

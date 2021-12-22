@@ -1,9 +1,8 @@
 import "./App.css";
-import {useEffect, useState } from "react"
 import useRandomJoke from "./hooks/useRandomJoke";
 
 function App() {
-  const joke = useRandomJoke()
+  const joke = useRandomJoke('Toy', 'Bhat')
 
   return (
     <div className="App">
